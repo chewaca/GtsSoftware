@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- para poder hacer referencia a este mapper dentro de los BeanFuncions -->
+
+<mapper namespace="Data.mappers.actividad">
+
+  <cache />
+  
+  
+<!-- Agregar plantilla actividad -->
+
+
+<insert id="insertarActividad" parameterType="GtsSoftware.actividad.ActividadBeanData" flushCache="true">
+	insert into actividad(IdActividad,Nombre,Descripcion,Tipo) <!-- esto esa a nivel de BD -->
+	values (#{codigo},#{nombre},#{descripcion},#{tipo}) <!-- esto a nivel de clases de java en este ejemplo, ProcesoBeanData-->
+</insert>
+  
+<!--  id, es el nombre de una funcion, poner un nombre que desees que guarde relevancia
+	  parameterType, es la ruta de la clase de donde voy a sacar los atributos, es decir los values {atributo}
+	  resultType, la ruta de la clase que tiene la estructura de lo que se va devolver
+-->  
+
+
+
+<insert id="insertarProgramacionActividad" parameterType="GtsSoftware.actividad.ProgramacionActividadBeanData" flushCache="true">
+	insert into actividadprogramacion(IdActividadProgramada,IdActividad,IdProgramacion,IdPersonalresponzable) <!-- esto esa a nivel de BD -->
+	values (#{idactividadprogramada},#{idActividad},#{idProgramacion},#{idPersonal}) <!-- esto a nivel de clases de java en este ejemplo, ProcesoBeanData-->
+</insert>
+
+
+<select id="buscarActividad" parameterType="GtsSoftware.actividad.CriterioActividadBeanData" resultType="GtsSoftware.actividad.ResultadoActividadBeanData">
+select 
+A.IdActividad as codigo
+,A.Nombre as nombre
+,A.Descripcion as descripcion
+from actividad A
+<where>
+	<if test="nombre != null ">
+        A.nombre  like  #{nombre}
+    </if>    
+</where>
+</select>
+
+<!-- Busca una actividad por ID -->
+<select id="buscarUnaActividad" parameterType="java.lang.Integer"  resultType="GtsSoftware.actividad.ActividadBeanData">
+select 
+S.IdSubProceso as codigo
+,S.Nombre as nombre
+,S.Descripcion as descripcion
+,S.FechaInicio as fechaInicio
+,S.FechaFin as fechaFin
+,S.Estado as estado
+from subproceso S where S.IdSubProceso=#{codigo}
+</select>
+
+
+
+ <!-- Modificar proceso, lo del lado derecho es conforme esta en tu .java -->
+<update id="modificarActividad" parameterType="GtsSoftware.actividad.ActividadBeanData">
+update subproceso set subproceso.Nombre=#{nombre}
+ ,subproceso.FechaActual=#{fechaActual}
+ ,subproceso.Descripcion=#{descripcion}
+ ,subproceso.Estado=#{estado}
+ where subproceso.IdSubProceso= #{codigo}
+</update>
+
+  
+<!-- Busca el máximo codigo para poder generar el siguiente codigo -->
+<select id="sacarCodigo" resultType="java.lang.Integer">
+	select max(IdActividad) from actividad
+</select>
+
+
+
+<select id="sacarCodigoProgramacionActividad" resultType="java.lang.Integer">
+	select max(IdActividadProgramada) from actividadprogramacion
+</select>
+
+ 
+</mapper>

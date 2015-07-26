@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- para poder hacer referencia a este mapper dentro de los BeanFuncions -->
+
+<mapper namespace="Data.mappers.proceso">
+
+  <cache />
+  
+  
+<!-- Agregar plantilla proceso -->
+
+
+<insert id="insertarProceso" parameterType="GtsSoftware.proceso.ProcesoBeanData" flushCache="true">
+	insert into proceso(IdProceso,Nombre,Descripcion,FechaInicio,FechaFin,Estado) <!-- esto esa a nivel de BD -->
+	values (#{codigo},#{nombre},#{descripcion},#{fechaInicio},#{fechaFin},#{estado}) <!-- esto a nivel de clases de java en este ejemplo, ProcesoBeanData-->
+</insert>
+  
+<!--  id, es el nombre de una funcion, poner un nombre que desees que guarde relevancia
+	  parameterType, es la ruta de la clase de donde voy a sacar los atributos, es decir los values {atributo}
+	  resultType, la ruta de la clase que tiene la estructura de lo que se va devolver
+-->  
+  
+  
+
+<select id="buscarProceso" parameterType="GtsSoftware.proceso.CriterioProcesoBeanData" resultType="GtsSoftware.proceso.ResultadoProcesoBeanData">
+select 
+proceso.IdProceso as codigo
+,proceso.Nombre as nombre
+,proceso.Descripcion as descripcion
+,proceso.Estado as estado
+from proceso
+<where>
+	<if test="nombre != null ">
+        proceso.nombre  like  #{nombre}
+    </if>
+    <if test="descripcion != null ">
+        AND (proceso.Descripcion  like  #{descripcion})
+    </if>
+     <if test="estado != 0">
+        AND proceso.Estado = #{estado}
+    </if>
+    
+</where>
+</select>
+<!-- Fin agregar  -->
+
+
+<!-- Busca un proceso por ID -->
+<select id="buscarUnProceso" parameterType="java.lang.Integer"  resultType="GtsSoftware.proceso.ProcesoBeanData">
+select 
+proceso.IdProceso as codigo
+,proceso.Nombre as nombre
+,proceso.Descripcion as descripcion
+,proceso.FechaInicio as fechaInicio
+,proceso.FechaFin as fechaFin
+,proceso.Estado as estado
+from proceso where proceso.IdProceso=#{codigo}
+</select>
+
+ <!-- Modificar proceso, lo del lado derecho es conforme esta en tu .java -->
+<update id="modificarProceso" parameterType="GtsSoftware.proceso.ProcesoBeanData">
+update proceso set proceso.Nombre=#{nombre}
+ ,proceso.FechaInicio=#{fechaInicio}
+ ,proceso.FechaFin=#{fechaFin}
+ ,proceso.Descripcion=#{descripcion}
+ ,proceso.Estado=#{estado}
+ where proceso.IdProceso= #{codigo}
+</update>
+
+  
+<!-- Busca el máximo codigo para poder generar el siguiente codigo -->
+<select id="sacarCodigo" resultType="java.lang.Integer">
+	select max(IdProceso) from proceso
+</select>
+
+
+<!-- Busca un proceso por nombre -->
+<select id="buscarProcesoNombre" parameterType="GtsSoftware.proceso.CriterioProcesoBeanData"  resultType="GtsSoftware.proceso.ProcesoBeanData">
+select 
+proceso.IdProceso as codigo
+,proceso.Nombre as nombre
+,proceso.Descripcion as descripcion
+,proceso.FechaInicio as fechaInicio
+,proceso.FechaFin as fechaFin
+,proceso.Estado as estado
+from proceso where proceso.Nombre like #{nombre}
+</select>
+
+
+
+<!-- Busca todas las programaciones de un proceso -->
+<select id="buscarProgramacion" parameterType="java.lang.Integer"  resultType="GtsSoftware.programacion.ResultadoProgramacionBeanData">
+select
+P.IdProgramacion idProgramacion
+,P.IdProceso idProceso
+,P.Descripcion descripcion
+,P.IdOcurrencia idOcurrencia
+,P.Ocurrencia ocurrencia
+,P.FechaInicio fechaInicio
+,P.FechaFin fechaFin
+,P.Estado estado
+FROM programacion P
+where P.IdProceso=#{idProceso}
+</select>
+
+
+
+ 
+</mapper>

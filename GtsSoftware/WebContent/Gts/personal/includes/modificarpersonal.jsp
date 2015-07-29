@@ -25,7 +25,8 @@ function isNumberKey(evt)
 <jsp:useBean id="resultado" scope="request" class="GtsSoftware.personal.PersonalData"></jsp:useBean>
 			<%SimpleDateFormat df= new SimpleDateFormat("dd/MM/YYYY"); %>
 			  <div class="row-fluid sortable" >
-			    <div class="box span12">
+			    <div class="box col-md-10">
+			    <div class="box-inner">	
 			      <div class="box-header well" data-original-title>
 			        <h2><i class=" icon-user"></i> MODIFICAR PERSONAL</h2>
 					</div>
@@ -145,6 +146,7 @@ function isNumberKey(evt)
                               </div>
 		              </fieldset>
 		            </form>
+		          </div>
 		          </div>
 		        </div>
 				

@@ -51,7 +51,7 @@ left join area a ON p.IdArea = a.IdArea
   <!-- Buscar Personal -->
 <select id="buscarPersonalUnico" parameterType="GtsSoftware.personal.PersonalData" resultType="GtsSoftware.personal.PersonalData">
 SELECT
-	P.IdPersonal as codigo,
+	p.IdPersonal as codigo,
 	p.Nombre as nombre, 
 	p.ApellidoPaterno as apPaterno,
 	p.ApellidoMaterno as apMaterno,
@@ -88,7 +88,7 @@ where IdPersonal = #{codigo}
 </update>
 <select id="buscarArea" parameterType="GtsSoftware.personal.AreaData" resultType="GtsSoftware.personal.AreaData">
 SELECT
-	P.IdArea as codigo,
+	p.IdArea as codigo,
 	p.Nombre as nombre, 
 	COALESCE(p.Descripcion,'') as descripcion,
 	p.Estado as estado

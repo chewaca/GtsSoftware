@@ -93,8 +93,10 @@
 						<h2><i class="glyphicon glyphicon-search"></i>  BUSCAR PERSONAL				  </h2>						
 						<div  align="right">
                                <a class="btn btn-primary btn-round btn-sm" href="/GtsSoftware/Gts/personal/agregarpersonal.jsp"> <i class="icon icon-add icon-white"></i> Nuevo </a> 
-                         	   <%if(ocultar.equals("1")){ %> <a href="#" class="btn btn-minimize btn-round" ><i class="glyphicon glyphicon-chevron-down"></i></a> <% } 
-                         	   else {%><a href="#" class="btn btn-minimize btn-round" ><i class="glyphicon glyphicon-chevron-up"></i></a> <%} %>
+                         	   <%if(ocultar.equals("1")){ %> 
+                         	   <a href="#" class="btn btn-minimize btn-round" ><i class="glyphicon glyphicon-chevron-down"></i></a> <% } 
+                         	   else {%>
+                         	   <a href="#" class="btn btn-minimize btn-round" ><i class="glyphicon glyphicon-chevron-up"></i></a> <%} %>
                          	   
                           </div>                      
 				  </div>
@@ -111,8 +113,8 @@
 							    <div class="controls">
 							      <input type="text" class="span3 typeahead" id="txtCodigo" name="txtCodigo" data-provide="typeahead" data-items="4" value=<%=codigoPersonal%> >
 						        </div>
-						      </div>
-						       
+						    </div>
+						    
 
 						     <div class="control-group">
 							    <label class="control-label" for="typeahead6">Nombres : </label>

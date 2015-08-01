@@ -68,7 +68,8 @@
 			<!-- content starts -->
 			
 			<div class="row-fluid sortable">
-				<div class="box span12">
+				<div class="box col-md-10">
+				<div class="box-inner">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-search"></i>  BUSCAR ROL				  </h2>						
 						<div  align="right">
@@ -112,7 +113,7 @@
 							</div>
 						  </fieldset>
 					  </form>   
-
+					 </div>
 				  </div>
 				</div><!--/span-->
 
@@ -132,12 +133,13 @@
 			  
 
 			<div class="row-fluid sortable">		
-				<div class="box span12">
+				<div class="box col-md-10">
+				<div class="box-inner">
 					<div class="box-header well" data-original-title>
 						<h2>RESULTADOS</h2>
 					</div>
 					<div class="box-content">
-						<table class="table table-striped table-bordered bootstrap-datatable datatable">
+						<table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
 
 						  <thead>
 							  <tr>
@@ -227,6 +229,7 @@ Visualizar
 					       </tbody>
 					       </element>
 					  </table>            
+					</div>
 					</div>
 				</div><!--/span-->
 			

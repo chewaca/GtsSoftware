@@ -112,7 +112,7 @@
 						     
 						    
 						    <div class="form-actions">
-						    <button type="submit" class="btn btn-primary btn-round">
+						    <button type="submit" class="btn btn-primary">
 						    <i class="glyphicon glyphicon-search white"></i>Buscar</button>
 			             </div>
 							</div>

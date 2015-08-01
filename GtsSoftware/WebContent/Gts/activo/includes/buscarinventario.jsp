@@ -99,11 +99,12 @@
 				
 			<!-- content starts -->
 			<div class="row-fluid sortable">
-				<div class="box span12">
+				<div class="box col-md-10">
+				<div class="box-inner">	
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-search"></i> BUSCAR INVENTARIO ACTIVO</h2>
+						<h2><i class="glyphicon glyphicon-search"></i> BUSCAR INVENTARIO ACTIVO</h2>
 						<div  align="right">
-                        	<a href="#" class="btn btn-minimize btn-round" ><i class="icon icon-chevron-up"></i></a>	
+                        	<a href="#" class="btn btn-minimize btn-round" ><i class="glyphicon glyphicon-chevron-up"></i></a>	
                     	</div>             
 				  	</div>
 				  
@@ -129,14 +130,17 @@
 								  </select>
 								</div>
 							  </div> 
-
+							<div class="control-group">
+						    <br>
+						    </div>
 						    </div>
 						    <div class="form-actions">
 						    	<button type="submit" class="btn btn-primary">
-						    		<i class="icon-search icon-white"></i> Buscar</button>			    
+						    		<i class="glyphicon glyphicon-search icon-white"></i> Buscar</button>			    
 							</div>
 						  </fieldset>
 					  </form>   
+				  </div>
 				  </div>
 				</div><!--/span-->
 
@@ -157,7 +161,8 @@
 			  
 
 			<div class="row-fluid sortable">		
-				<div class="box span12">
+				<div class="box col-md-10">
+				<div class="box-inner">	
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-align-justify"></i> RESULTADOS</h2>
 						<div  align="right">
@@ -165,7 +170,7 @@
                         </div>
 					</div>
 					<div class="box-content">
-						<table class="table table-striped table-bordered bootstrap-datatable datatable">
+						<table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
 
 						  <thead>
 							  <tr>
@@ -205,6 +210,7 @@
 					       </tbody>
 					       </element>
 					  </table>            
+					</div>
 					</div>
 				</div><!--/span-->
 			

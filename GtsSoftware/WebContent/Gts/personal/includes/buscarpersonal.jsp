@@ -168,7 +168,7 @@
 						    </span>
 						    <div class="form-actions">
 						    <button type="submit" class="btn btn-primary">
-						    <i class="icon-search icon-white"></i>
+						    <i class="glyphicon glyphicon-search icon-white"></i>
 						    Buscar</button>
 							</div>
 						  </fieldset>

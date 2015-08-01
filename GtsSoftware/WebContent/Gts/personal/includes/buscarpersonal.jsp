@@ -92,7 +92,7 @@
 					<div class="box-header well" data-original-title>
 						<h2><i class="glyphicon glyphicon-search"></i>  BUSCAR PERSONAL				  </h2>						
 						<div  align="right">
-                               <a class="btn btn-primary btn-round btn-sm" href="/GtsSoftware/Gts/personal/agregarpersonal.jsp"> <i class="icon icon-add icon-white"></i> Nuevo </a> 
+                               <a class="btn btn-primary btn-round btn-sm" href="/GtsSoftware/Gts/personal/agregarpersonal.jsp"> <i class="glyphicon glyphicon-plus white"></i> Nuevo </a> 
                          	   <%if(ocultar.equals("1")){ %> 
                          	   <a href="#" class="btn btn-minimize btn-round" ><i class="glyphicon glyphicon-chevron-down"></i></a> <% } 
                          	   else {%>
@@ -285,14 +285,14 @@
                           				<a class="btn btn-danger"
                           					href="javascript:alt_consultar(<%=((PersonalData)resultados.get(i)).getCodigo()%>)">
                           					<i
-                          						class="icon-zoom-in icon-white">
+                          						class="glyphicon glyphicon-zoom-in icon-white">
                           					</i>
 Visualizar
                           				</a>
                           				<a class="btn btn-danger"
                           					href="javascript:alt_modificar(<%=((PersonalData)resultados.get(i)).getCodigo()%>)">
                           					<i
-                          						class="icon-pencil icon-white">
+                          						class="glyphicon glyphicon-pencil icon-white">
                           					</i>
  Modificar
                           				</a>
@@ -300,7 +300,7 @@ Visualizar
                           				 <a class="btn btn-danger"
                           					href="javascript:alt_estado(<%=((PersonalData)resultados.get(i)).getCodigo()%>,<%=((PersonalData)resultados.get(i)).getEstado()%>)">
                           					<i
-                          						class="icon-off icon-white">
+                          						class="glyphicon glyphicon-off icon-white">
                           					</i>
 									<%=		                          					
                           					((PersonalData)resultados.get(i)).getBoton()

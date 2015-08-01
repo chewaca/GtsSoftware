@@ -69,13 +69,15 @@
 			<!-- content starts -->
 			
 			<div class="row-fluid sortable">
-				<div class="box span12">
+				<div class="box col-md-10">
+				<div class="box-inner">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-search"></i>  BUSCAR USUARIO				  </h2>						
+						<h2><i class="glyphicon glyphicon-search"></i>  BUSCAR USUARIO				  </h2>						
 						<div  align="right">
-                               <a class="btn btn-primary" href="javascript:alt_agregar()"> <i class="icon icon-add icon-white"></i> CREAR USUARIO </a> 
-                          <a href="#" class="btn btn-minimize btn-round btn-default" ><i class="icon icon-chevron-up"></i></a>
-                          </div>                      
+                               <a class="btn btn-primary btn-round btn-sm" href="/GtsSoftware/Gts/usuario/agregarusuario.jsp">
+                                <i class="glyphicon glyphicon-plus white"></i> Nuevo </a> 
+                          		<a href="#" class="btn btn-minimize btn-round" ><i class="glyphicon glyphicon-chevron-up"></i></a>
+                        </div>                      
 				  </div>
 					<div class="box-content">
 						<form  class="form-horizontal" name="frmCriteriosBusqueda" id="frmCriteriosBusqueda"  method="POST" action="<%= response.encodeURL("SMVUsuario")%>">
@@ -83,9 +85,6 @@
 						   <input type="hidden" name="tipo" value="1"></input>
 						  <fieldset>
 						  
-						  						  
-						    <div class="control-group">
-						    <br>
 						    <div class="control-group">
 							    <label class="control-label" for="typeahead6">ID Usuario : </label>
 							    <div class="controls">
@@ -131,16 +130,17 @@
 								  </select>
 								</div>
 							  </div>
-
+							<div class="control-group">
+						    <br>
 						    </div>
 						    <div class="form-actions">
 						    <button type="submit" class="btn btn-primary">
-						    <i class="icon-search icon-white"></i>
+						    <i class="glyphicon glyphicon-search icon-white"></i>
 						    Buscar</button>
 							</div>
 						  </fieldset>
 					  </form>   
-
+					</div>
 				  </div>
 				</div><!--/span-->
 
@@ -160,12 +160,13 @@
 			  
 
 			<div class="row-fluid sortable">		
-				<div class="box span12">
+				<div class="box col-md-10">
+				<div class="box-inner">
 					<div class="box-header well" data-original-title>
-						<h2>RESULTADOS</h2>
+						<h2><i class="glyphicon glyphicon-align-justify"></i> RESULTADOS</h2>
 					</div>
 					<div class="box-content">
-						<table class="table table-striped table-bordered bootstrap-datatable datatable">
+						<table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
 
 						  <thead>
 							  <tr>
@@ -228,14 +229,14 @@
                           				<a class="btn btn-danger"
                           					href="javascript:alt_consultar(<%=((ResultadoUsuarioBeanData)resultados.get(i)).getCodigo()%>)">
                           					<i
-                          						class="icon-zoom-in icon-white">
+                          						class="glyphicon glyphicon-zoom-in icon-white">
                           					</i>
 Visualizar
                           				</a>
                           				<a class="btn btn-danger"
                           					href="javascript:alt_modificar(<%=((ResultadoUsuarioBeanData)resultados.get(i)).getCodigo()%>)">
                           					<i
-                          						class="icon-pencil icon-white">
+                          						class="glyphicon glyphicon-pencil icon-white">
                           					</i>
  Modificar
                           				</a>
@@ -243,7 +244,7 @@ Visualizar
                           				 <a class="btn btn-danger"
                           					href="javascript:alt_estado(<%=((ResultadoUsuarioBeanData)resultados.get(i)).getCodigo()%>,<%=((ResultadoUsuarioBeanData)resultados.get(i)).getEstado()%>)">
                           					<i
-                          						class="icon-off icon-white">
+                          						class="glyphicon glyphicon-off icon-white">
                           					</i>
 									<%=		                          					
                           					((ResultadoUsuarioBeanData)resultados.get(i)).getBoton()
@@ -256,6 +257,7 @@ Visualizar
 					       </tbody>
 					       </element>
 					  </table>            
+					</div>
 					</div>
 				</div><!--/span-->
 			

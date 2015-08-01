@@ -48,10 +48,10 @@ function valida_envia(){
 <jsp:useBean id="cmbRol"  scope="session" class="java.util.Vector"></jsp:useBean>	
 
 			  <div class="row-fluid sortable">
-			    <div class="box span12">
+			    <div class="box col-md-10">
+				<div class="box-inner">
 			      <div class="box-header well" data-original-title>
-			        <h2><i class=" icon-th-large"></i> CREAR USUARIO</h2>
-			        <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+			        <h2><i class="glyphicon glyphicon-th-large"></i> CREAR USUARIO</h2>
 					</div>
 					<div class="box-content">
 					
@@ -95,13 +95,15 @@ function valida_envia(){
                                       <input id="txtContrasenha2" name="txtContrasenha2" type="password" class="span3 typeahead" required>
                                   </div>
                               </div>						
-			          
+			          <div class="control-group">
+						    <br>
+						    </div>
 			            <div class="form-actions">
 			              <button type="submit" class="btn btn-primary" onclick="javascript:alt_submit()">
-			              <i class="icon-check icon-white"></i> 
+			              <i class="glyphicon glyphicon-check icon-white"></i> 
 			              AGREGAR</button>
 			              <button type="reset" class="btn" onclick="location.href='buscarusuario.jsp'">
-			              <i class="icon-circle-arrow-left icon-black"></i>
+			              <i class="glyphicon glyphicon-circle-arrow-left icon-black"></i>
 			              Regresar</button>
 		                </div>
 						
@@ -113,7 +115,7 @@ function valida_envia(){
 		            </form>
 		          </div>
 		        </div>
-				
+				 </div>
 			    <!--/span-->
 		      </div>
 			  <!--/row-->

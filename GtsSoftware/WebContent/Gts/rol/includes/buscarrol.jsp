@@ -71,10 +71,10 @@
 				<div class="box col-md-10">
 				<div class="box-inner">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-search"></i>  BUSCAR ROL				  </h2>						
+						<h2><i class="glyphicon glyphicon-search"></i>  BUSCAR ROL				  </h2>						
 						<div  align="right">
-                               <a class="btn btn-primary" href="/GtsSoftware/Gts/rol/agregarrol.jsp"> <i class="icon icon-add icon-white"></i> CREAR ROL </a> 
-                          	<a href="#" class="btn btn-minimize btn-round btn-default" ><i class="icon icon-chevron-up"></i></a>
+                               <a class="btn btn-primary btn-round btn-sm" href="/GtsSoftware/Gts/rol/agregarrol.jsp"> <i class="glyphicon glyphicon-plus white"></i> CREAR ROL </a> 
+                          	<a href="#" class="btn btn-minimize btn-round" ><i class="glyphicon glyphicon-chevron-up"></i></a>
                           </div>                      
 				  </div>
 					<div class="box-content">
@@ -106,9 +106,12 @@
 								  </select>
 								</div>
 						    </div>
+						    <div class="control-group">
+						    <br/>
+						    </div>
 						    <div class="form-actions">
 						    <button type="submit" class="btn btn-primary">
-						    <i class="icon-search icon-white"></i>
+						    <i class="glyphicon glyphicon-search icon-white"></i>
 						    Buscar</button>
 							</div>
 						  </fieldset>
@@ -136,7 +139,7 @@
 				<div class="box col-md-10">
 				<div class="box-inner">
 					<div class="box-header well" data-original-title>
-						<h2>RESULTADOS</h2>
+						<h2><i class="glyphicon glyphicon-align-justify"></i> RESULTADOS</h2>
 					</div>
 					<div class="box-content">
 						<table class="table table-striped table-bordered bootstrap-datatable datatable responsive">

@@ -4,6 +4,13 @@
 
 <script>
 
+$(function() {
+	$( "#fecha" ).datepicker({
+	      changeMonth: true,
+	      changeYear: true
+	});
+});
+
 function alt_submit(){
 	if(confirm("¿Seguro que desea agregar un nuevo Día no laborable?"))
 	{

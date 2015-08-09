@@ -19,8 +19,6 @@
 	<!--The beans  -->
 	<jsp:useBean id="casosDeUso" scope="request" class="java.util.Vector"></jsp:useBean>
 	<!-- The styles -->
-	
-	
 	<link href="css/basic.css" type="text/css" rel="stylesheet" />
 	<link id="bs-css" href="css/bootstrap-united.css" rel="stylesheet">
 		<style type="text/css">
@@ -44,7 +42,7 @@
 			});
 			
 	    </script>
-	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 	<link href="css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="css/charisma-app.css" rel="stylesheet">
 	<link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
@@ -64,19 +62,15 @@
 
 	<!-- The GTS icon -->
 	<link rel="shortcut icon" href="img/LogoGTS2.png">
-	<link id="bs-css" href="css/bootstrap-united.css" rel="stylesheet">
+	<link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet">
 	<link href='css/opa-icons.css' rel='stylesheet'>
 </head>
 
 <body>
-
+		<jsp:include page="/Gts/general/superior.jsp" />
 		<!-- Para HACER MODAL -->
 		<jsp:include page="/Gts/general/jsexternal.jsp" />
 		<script type="text/javascript" src="js/apprise-1.5.full.js"></script>
-		
-		
-		
-		
 		<script>
 		
 			function soloNumeros(evt){
@@ -94,10 +88,8 @@
 				}
 			}
 		
-		
 			$(document).ready(function(){
 				//Examples of how to assign the Colorbox event to elements
-				
 				$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
 				
 				//Example of preserving a JavaScript event for inline calls.
@@ -162,7 +154,7 @@
 			for (x=0;x<elementos.length;x++){
 				if (elementos[x].checked) {
 					form.nombreSubproceso.value =  elementos[x].value;
-					cantSuprocesos++;
+					cantSuprocesos=cantProcesos+1;
 				}
 			}
 			
@@ -172,7 +164,7 @@
 			for (x=0;x<elementosP.length;x++){
 				if (elementosP[x].checked) {
 					form.nombreProceso.value =  elementosP[x].value;
-					cantProcesos++;
+					cantProcesos=cantProcesos+1;
 				}
 			}
 			
@@ -280,13 +272,11 @@
 		function alt_seleccionar(){
 			var form=document.getElementById("frmSeleccionar");
 			form.accion.value="Seleccionar";
-			//form.tipo.value="2";
 			form.submit();
 		}
 		
 		function alt_submit(){
 			var form= document.frmSubproceso;
-			//if(validaForm()) form.submit();
 			nombreSubproceso = document.getElementById("txtSubproceso").value;
 			descripcion=document.getElementById("txtDescripcion").value;
 			tiempoEstimado=document.getElementById("txtTiempo").value;
@@ -382,7 +372,7 @@
 <jsp:useBean id="nivel5" scope="session" class="java.util.Vector"></jsp:useBean>
 
 
-<jsp:include page="/Gts/general/superior.jsp" />
+
 		
 		
 <form class="form-horizontal" id="frmAlternativo" name="frmAlternativo" method="POST" action="<%= response.encodeURL(request.getContextPath()+"/Gts/proceso/SMVProceso")%>">
@@ -717,12 +707,12 @@
                           	</td>
                           	
                           	        <td class="center">
-                          				<a class="btn btn-primary iframe" 
+<%--                           				<a class="btn btn-primary iframe" 
                           					href="../actividad/seleccionaractividad.jsp">
                           					<input type="hidden" name="codigoA" value="<%=((ResultadoProgramacionBeanData)resultadosProg.get(i)).getIdProgramacion()%>"></input>
 										<i class="icon-list icon-white"></i>
 Asignar Actividades
-                          				</a>
+                          				</a> --%>
                           				 
                           				<a class="btn btn-primary iframe" onclick="javascript:alt_codigo_activo(<%=((ResultadoProgramacionBeanData)resultadosProg.get(i)).getIdProgramacion()%>)"
                           					href="../activo/seleccionaractivo.jsp">

@@ -6,12 +6,10 @@
 <!-- Zona de Java Script //-->
 function alt_fecha(obj){
 	obj.value=obj.value.slice(0,5);
-	
 }
 
 function alt_submit(){
 	var form= document.frmProgramacion;
-	//if(validaForm()) form.submit();
 	parent.location.reload(true);
 	form.submit();
 	
@@ -20,10 +18,20 @@ function alt_submit(){
 
 function alt_cancelar(){
 	var form= document.frmCrearProgramacion;
-	//if(validaForm()) form.submit();
 	form.tipo.value="3";
 	form.submit();	
 }
+
+$(function() {
+	$( "#fcCreacion" ).datepicker({
+	      changeMonth: true,
+	      changeYear: true
+	});
+	$( "#fcFin" ).datepicker({
+	      changeMonth: true,
+	      changeYear: true
+	});
+});
 
 </script>
 <!--The beans  -->
@@ -154,14 +162,6 @@ function alt_cancelar(){
 		            </td>
 		            <td width="50">
 		            </td>
-<!-- 		            <td>
-		            	<label class="radio-inline">
-		                    <input type="radio" name="inlineRadioOptions2" id="inlineRadio3" value="option1"> Tiene fin
-		                </label>
-		                <label class="radio-inline">
-		                    <input type="radio" name="inlineRadioOptions2" id="inlineRadio4" value="option2"> No tiene fin
-		                </label>
-		            </td> -->
 		            <td width="50">
 		            </td>
 		            <td width="100" align="left" valign="top">

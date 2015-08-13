@@ -3,6 +3,8 @@
 <head>
 	<jsp:include page="/Gts/general/header.jsp" />
 	<link rel="shortcut icon" href="img/LogoGTS2.png">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <body>
 		<%-- <jsp:include page="/Gts/general/superior.jsp" />  --%>
 		<div class="container-fluid">

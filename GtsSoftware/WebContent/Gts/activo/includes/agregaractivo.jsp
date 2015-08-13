@@ -11,6 +11,17 @@
 
 <script >
 
+$(function() {
+	$( "#fFechaCompra" ).datepicker({
+	      changeMonth: true,
+	      changeYear: true
+	});
+	$( "#fFechaVencimientoGarantia" ).datepicker({
+	      changeMonth: true,
+	      changeYear: true
+	});
+});
+
 function alt_submit(){
 		var form= document.frmActivo;
 		//form.submit();
